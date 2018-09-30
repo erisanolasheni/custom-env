@@ -1,0 +1,133 @@
+# CustomEnv
+
+Custom envs is a library built to make development more feasible by allowing multiple .env configurations for different environments. This is done by loading environment variables from a .env._envname_ file, into the node's `process.env` object.
+
+## Installation
+
+`npm install custom-envs`
+
+## Usage
+
+Place this at the top of your application
+
+```// Default configuration
+require('custom-envs').env()
+```
+
+This by default loads configuration from the `.env` file and assumes the app is in development enviroment mode.
+
+Create a `.env` file in your app's root directory and add the environment variables each on new line:
+
+```
+APP_ENV=dev
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=root
+```
+
+Simple! The `process.env` is now loaded with the environment variables above.
+
+### Example
+
+```
+console.log(process.env.APP_ENV)
+console.log(process.env.DB_HOST)
+console.log(process.env.DB_USER)
+console.log(process.env.DB_PASS)
+```
+
+### Expected Output
+
+```
+dev
+localhost
+root
+root
+```
+
+If you want to load from a particular environment, use:
+
+```
+// This loads configuration from staging environment
+require('custom-envs).env('staging')
+```
+
+Create a `.env.staging` file in your app's root directory and add the environment variables each on new line:
+
+```
+APP_ENV=staging
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=root
+```
+
+The `process.env` is now loaded with the environment variables above.
+Try it out:
+
+```
+NODE_ENV=staging node index.js
+```
+
+### Example
+
+```
+console.log(process.env.APP_ENV)
+console.log(process.env.DB_HOST)
+console.log(process.env.DB_USER)
+console.log(process.env.DB_PASS)
+```
+
+### Expected Output
+
+```
+staging
+localhost
+root
+root
+```
+
+## Loading from the current environment
+
+You can load configuration from the current environment with custom-envs, just pass the their argument of the `env()` method as `true` and that's all:
+
+```
+// Loading configuration dynamically from to the current enviroment
+require('custom-envs).env().current()
+```
+
+## The `env()` method
+
+The `env()` method holds three (3) optional arguments `envname`, `path`, `use_current_environment` with defaults to dev, _current working directory_ and _true_ respectively. If you wish to set a different path rather than the _current working directory_, pass you path as the second argument of the `env()` method.
+
+```
+require('custom-envs').env('dev', 'path/to/custom/path', false)
+```
+
+## Are you a dotenv fan?
+Wow! If you are already familiar with the popular `dotenv` library and you still want to set the custom `config`, you are good to go as `custom-envs` also provides a public method that directly loads the `dotenv`'s `config` method. Try it out:
+
+```
+// Load custom-envs and set configurations from dotenv
+var custom_environments = require('custom-envs')
+
+// Set the environment to load
+custom_environments.env(process.env.NODE_ENV)
+
+// Set dotenv's config
+custom_environments.dotenvConfig({'path':process.cwd(), 'encoding':'utf8'})
+```
+
+## Chaining
+
+Every public method of custom-envs returns itself, making it possible to chain methods. Example:
+
+```
+// Chain the methods
+require('custom-envs).env('dev').dotenvConfig({'encoding':'utf8'})
+```
+### What about .env.production?
+We strongly recommend that you should not commit and pass `.env.production` file in production mode, as this file may contain sensitive information.
+
+## Github Repo
+
+
