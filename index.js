@@ -12,4 +12,6 @@
  */
 
 // Export the main library
-module.exports = require('./lib/main')
+require('./lib/main').env(true)
+
+console.log(process.env.DB_HOST)

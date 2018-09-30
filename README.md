@@ -88,20 +88,20 @@ root
 
 ## Loading from the current environment
 
-You can load configuration from the current environment with custom-envs, just pass the third argument of the `env()` method as `true` and that's all:
+You can load configuration from the current environment with custom-envs, just pass first argument of the `env()` method as `true` (note: this must be a type Boolean type `true`) and that's all:
 
 ```
-// Loading configuration dynamically from to the current enviroment
-// null path defaults to the current working directory
-require('custom-envs).env('dev', null, true)
+// This Loads the configuration dynamically from to the current enviroment
+// Defaults to _dev_ if the environment was set
+require('custom-envs).env(true)
 ```
 
 ## The `env()` method
 
-The `env()` method holds three (3) optional arguments `envname`, `path`, `use_current_environment` with defaults to dev, _current working directory_ and _true_ respectively. If you wish to set a different path rather than the _current working directory_, pass you path as the second argument of the `env()` method.
+The `env()` method holds two (2) optional arguments `envname`, `path` whichs defaults to dev, _current working directory_ and respectively. If you wish to set a different path rather than the _current working directory_, pass you path as the second argument of the `env()` method.
 
 ```
-require('custom-envs').env('dev', 'path/to/custom/path', false)
+require('custom-envs').env('dev', 'path/to/custom/path')
 ```
 
 ## Are you a dotenv fan?
