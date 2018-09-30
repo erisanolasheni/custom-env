@@ -88,11 +88,12 @@ root
 
 ## Loading from the current environment
 
-You can load configuration from the current environment with custom-envs, just pass the their argument of the `env()` method as `true` and that's all:
+You can load configuration from the current environment with custom-envs, just pass the third argument of the `env()` method as `true` and that's all:
 
 ```
 // Loading configuration dynamically from to the current enviroment
-require('custom-envs).env().current()
+// null path defaults to the current working directory
+require('custom-envs).env('dev', null, true)
 ```
 
 ## The `env()` method
