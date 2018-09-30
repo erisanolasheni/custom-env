@@ -1,0 +1,22 @@
+{
+  "name": "custom-envs",
+  "version": "1.0.0",
+  "description": "Custom envs is a library built to make development more feasible by allowing multiple .env configurations for different environments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    ".env",
+    "environment",
+    "variables",
+    "node",
+    "custom",
+    "dotenv"
+  ],
+  "author": "Erisan Olasheni <erisanolasheni@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "*"
+  }
+}
