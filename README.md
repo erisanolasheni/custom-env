@@ -98,7 +98,7 @@ require('custom-env).env(true)
 
 ## The `env()` method
 
-The `env()` method holds two (2) optional arguments `envname`, `path` whichs defaults to dev, _current working directory_ and respectively. If you wish to set a different path rather than the _current working directory_, pass you path as the second argument of the `env()` method.
+The `env()` method holds two (2) optional arguments `envname`, `path` which defaults to _dev_ and _current working directory_ respectively. If you wish to set a different path rather than the _current working directory_, pass your path as the second argument of the `env()` method.
 
 ```
 require('custom-env').env('dev', 'path/to/custom/path')
