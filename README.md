@@ -49,7 +49,7 @@ If you want to load from a particular environment, use:
 
 ```
 // This loads configuration from staging environment
-require('custom-env).env('staging')
+require('custom-env').env('staging')
 ```
 
 Create a `.env.staging` file in your app's root directory and add the environment variables each on new line:
@@ -93,7 +93,7 @@ You can load configuration from the current environment with custom-env, just pa
 ```
 // This Loads the configuration dynamically from to the current enviroment
 // Defaults to _dev_ if the environment was set
-require('custom-env).env(true)
+require('custom-env').env(true)
 ```
 
 ## The `env()` method
@@ -124,12 +124,10 @@ Every public method of custom-env returns itself, making it possible to chain me
 
 ```
 // Chain the methods
-require('custom-env).env('dev').dotenvConfig({'encoding':'utf8'})
+require('custom-env').env('dev').dotenvConfig({'encoding':'utf8'})
 ```
 ### What about .env.production?
 We strongly recommend that you should not commit and pass `.env.production` file in production mode, as this file may contain sensitive information.
 
 ## Github Repo
 [https://github.com/erisanolasheni/custom-env](https://github.com/erisanolasheni/custom-env)
-
-
