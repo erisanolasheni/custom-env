@@ -105,7 +105,7 @@ require('custom-env').env('dev', 'path/to/custom/path')
 ```
 
 ## Are you a dotenv fan?
-Wow! If you are already familiar with the popular `dotenv` library and you still want to set the custom `config`, you are good to go as `custom-env` also provides a public method that directly loads the `dotenv`'s `config` method. Try it out:
+Wow! If you are already familiar with the popular [`dotenv`](https://github.com/motdotla/dotenv) library and you still want to set the custom `config`, you are good to go as `custom-env` also provides a public method that directly loads the `dotenv`'s `config` method. Try it out:
 
 ```
 // Load custom-env and set configurations from dotenv
@@ -117,6 +117,18 @@ custom_environments.env(process.env.NODE_ENV)
 // Set dotenv's config
 custom_environments.dotenvConfig({'path':process.cwd(), 'encoding':'utf8'})
 ```
+
+You can also leverage the [`dotenv-expand`](https://github.com/motdotla/dotenv-expand) extension to use ENV variable expansion inside your `.env` files.
+
+For example:
+
+```
+IP=127.0.0.1
+PORT=1234
+APP_URL=http://${IP}:${PORT}
+```
+
+Using the above example `.env` file, `process.env.APP_URL` would be `http://127.0.0.1:1234`.
 
 ## Chaining
 

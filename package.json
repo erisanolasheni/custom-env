@@ -21,6 +21,7 @@
   "author": "Erisan Olasheni <erisanolasheni@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "*"
+    "dotenv": "*",
+    "dotenv-expand": "^5.0.0"
   }
 }
