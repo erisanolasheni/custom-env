@@ -1,6 +1,6 @@
 {
   "name": "custom-env",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom env is a library built to make development more feasible by allowing multiple .env configurations for different environments.",
   "main": "index.js",
   "scripts": {
