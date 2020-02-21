@@ -97,7 +97,7 @@ require('custom-env').env(true)
 
 ## The `env()` method
 
-The `env()` method holds two (3) optional arguments.
+The `env()` method holds three (3) optional arguments.
 * 1 `envname` - Specifies the development name, defaults to `dev` or `development`,
 * 2 `path` - Specifies the directory to find configuration files, defaults to _current working directory_.
 * 3 `defaultEnvFallback` - Specifies whether to fallback to `.env` configuration if the specified _envname_ is not found, defaults to `true`.
@@ -106,6 +106,7 @@ The `env()` method holds two (3) optional arguments.
 require('custom-env').env('dev', 'path/to/custom/path')
 ```
 
+## dotenv-expand
 
 You can also leverage the [`dotenv-expand`](https://github.com/motdotla/dotenv-expand) extension to use ENV variable expansion inside your `.env` files.
 
