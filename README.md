@@ -14,8 +14,6 @@ Place this at the top of your application
 require('custom-env').env()
 ```
 
-This by default loads configuration from the `.env` file and assumes the app is in development enviroment mode.
-
 Create a `.env` file in your app's root directory and add the environment variables each on new line:
 
 ```
@@ -62,6 +60,7 @@ DB_PASS=root
 ```
 
 The `process.env` is now loaded with the environment variables above.
+This completely overrides `process.env.NODE_ENV`
 Try it out:
 
 ```
@@ -88,7 +87,7 @@ root
 
 ## Loading from the current environment
 
-You can load configuration from the current environment with custom-env, just pass first argument of the `env()` method as `true` (note: this must be a type Boolean type `true`) and that's all:
+You can load configuration from the current environment with custom-env by passing the first argument of the `env()` method as `true` (note: not required in version `2.x`) and that's all:
 
 ```
 // This Loads the configuration dynamically from to the current enviroment
@@ -104,19 +103,6 @@ The `env()` method holds two (2) optional arguments `envname`, `path` which defa
 require('custom-env').env('dev', 'path/to/custom/path')
 ```
 
-## Are you a dotenv fan?
-Wow! If you are already familiar with the popular [`dotenv`](https://github.com/motdotla/dotenv) library and you still want to set the custom `config`, you are good to go as `custom-env` also provides a public method that directly loads the `dotenv`'s `config` method. Try it out:
-
-```
-// Load custom-env and set configurations from dotenv
-var custom_environments = require('custom-env')
-
-// Set the environment to load
-custom_environments.env(process.env.NODE_ENV)
-
-// Set dotenv's config
-custom_environments.dotenvConfig({'path':process.cwd(), 'encoding':'utf8'})
-```
 
 You can also leverage the [`dotenv-expand`](https://github.com/motdotla/dotenv-expand) extension to use ENV variable expansion inside your `.env` files.
 
@@ -140,6 +126,17 @@ require('custom-env').env('dev').dotenvConfig({'encoding':'utf8'})
 ```
 ### What about .env.production?
 We strongly recommend that you should not commit and pass `.env.production` file in production mode, as this file may contain sensitive information.
+
+
+## Change Log
+### 2.0 - 2020-02-21
+#### Fixed
+* Bug [#11](https://github.com/erisanolasheni/custom-env/issues/11) Inconsistency in envname loading fixed.
+* Bug [#9](https://github.com/erisanolasheni/custom-env/issues/9) Default env config fall back fixed.
+
+#### Changed
+* You can now load configuration from the current environment by default without passing any argument to `env()` method
+
 
 ## Github Repo
 [https://github.com/erisanolasheni/custom-env](https://github.com/erisanolasheni/custom-env)
