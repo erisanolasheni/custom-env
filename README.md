@@ -120,14 +120,7 @@ APP_URL=http://${IP}:${PORT}
 
 Using the above example `.env` file, `process.env.APP_URL` would be `http://127.0.0.1:1234`.
 
-## Chaining
 
-Every public method of custom-env returns itself, making it possible to chain methods. Example:
-
-```
-// Chain the methods
-require('custom-env').env('dev').dotenvConfig({'encoding':'utf8'})
-```
 ### What about .env.production?
 We strongly recommend that you should not commit and pass `.env.production` file in production mode, as this file may contain sensitive information.
 
