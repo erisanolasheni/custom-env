@@ -1,7 +1,5 @@
 # Custom-Env
 
-[![Join the chat at https://gitter.im/custom-env/community](https://badges.gitter.im/custom-env/community.svg)](https://gitter.im/custom-env/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Custom env is a library built to make development more feasible by allowing multiple .env configurations for different environments. This is done by loading environment variables from a .env._envname_ file, into the node's `process.env` object.
 
 ## Installation
