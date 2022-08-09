@@ -12,13 +12,19 @@ Custom env is a library built to make development more feasible by allowing mult
 
 Place this at the top of your application
 
-```// Default configuration
+ESM Import
+```javascript // Default configuration
+import { env } from 'custom-env'
+env()
+```
+
+CommonJS Require
+```javascript // Default configuration
 require('custom-env').env()
 ```
-
 Create a `.env` file in your app's root directory and add the environment variables each on new line:
 
-```
+```toml
 APP_ENV=dev
 DB_HOST=localhost
 DB_USER=root
@@ -29,7 +35,7 @@ Simple! The `process.env` is now loaded with the environment variables above.
 
 ### Example
 
-```
+```javascript
 console.log(process.env.APP_ENV)
 console.log(process.env.DB_HOST)
 console.log(process.env.DB_USER)
@@ -47,14 +53,22 @@ root
 
 If you want to load from a particular environment, use:
 
+ESM Import
+```javascript
+// This loads configuration from staging environment
+import { env } from 'custom-env'
+env('staging')
 ```
+
+CommonJS Require
+```javascript
 // This loads configuration from staging environment
 require('custom-env').env('staging')
 ```
 
 Create a `.env.staging` file in your app's root directory and add the environment variables each on new line:
 
-```
+```toml
 APP_ENV=staging
 DB_HOST=localhost
 DB_USER=root
@@ -71,7 +85,7 @@ NODE_ENV=staging node index.js
 
 ### Example
 
-```
+```javascript
 console.log(process.env.APP_ENV)
 console.log(process.env.DB_HOST)
 console.log(process.env.DB_USER)
@@ -91,7 +105,16 @@ root
 
 You can load configuration from the current environment with custom-env by passing the first argument of the `env()` method as `true` (note: not required in version `2.x`) and that's all:
 
+ESM Import
+```javascript // Default configuration
+// This Loads the configuration dynamically from to the current enviroment
+// Defaults to _dev_ if the environment was set
+import { env } from 'custom-env'
+env('custom-env').env(true)
 ```
+
+CommonJS Require
+```javascript
 // This Loads the configuration dynamically from to the current enviroment
 // Defaults to _dev_ if the environment was set
 require('custom-env').env(true)
@@ -104,7 +127,14 @@ The `env()` method holds three (3) optional arguments.
 * 2 `path` - Specifies the directory to find configuration files, defaults to _current working directory_.
 * 3 `defaultEnvFallback` - Specifies whether to fallback to `.env` configuration if the specified _envname_ is not found, defaults to `true`.
 
+ESM Import
+```javascript
+import { env } from 'custom-env'
+env('dev', 'path/to/custom/path')
 ```
+
+CommonJS Require
+```javascript
 require('custom-env').env('dev', 'path/to/custom/path')
 ```
 
@@ -125,6 +155,21 @@ Using the above example `.env` file, `process.env.APP_URL` would be `http://127.
 
 ### What about .env.production?
 We strongly recommend that you should not commit and pass `.env.production` file in production mode, as this file may contain sensitive information.
+
+
+## TypeScript Usage
+The library comes with a type declaration file
+If you want auto complete for your .env variables
+
+Use [dotenv-types-generator](https://github.com/saulmaldonado/dotenv-types-generator) it will generate a .env.d.ts file containing all your variables
+
+Usage:
+```
+npx dotenv-types-generator
+```
+
+
+
 
 
 ## Change Log
