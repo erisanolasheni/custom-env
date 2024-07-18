@@ -179,6 +179,11 @@ Using the above example `.env` file, `process.env.APP_URL` would be `http://127.
 
 We strongly recommend that you should not commit and pass `.env.production` file in production mode, as this file may contain sensitive information.
 
+## Sponsor and Support
+Sponsoring and Supporting `custom-env` keeps the work going and improvements steady. [Buy me a coffe: https://www.buymeacoffee.com/olasheni](https://www.buymeacoffee.com/olasheni) Thanks in advance!
+
+
+
 ## Change Log
 
 ### 2.0.2 - 2023-04-24
