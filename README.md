@@ -191,6 +191,7 @@ Sponsoring and Supporting `custom-env` keeps the work going and improvements ste
 #### Changed
 
 - Create FUNDING.yml file
+- Updates `dotenv-expand`
 
 ### 2.0.2 - 2023-04-24
 
