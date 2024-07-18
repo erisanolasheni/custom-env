@@ -27,7 +27,7 @@ require("custom-env").env();
 
 Create a `.env` file in your app's root directory and add the environment variables each on new line:
 
-```toml
+```env
 APP_ENV=dev
 DB_HOST=localhost
 DB_USER=root
@@ -73,7 +73,7 @@ require("custom-env").env("staging");
 
 Create a `.env.staging` file in your app's root directory and add the environment variables each on new line:
 
-```toml
+```env
 APP_ENV=staging
 DB_HOST=localhost
 DB_USER=root
@@ -185,6 +185,12 @@ Sponsoring and Supporting `custom-env` keeps the work going and improvements ste
 
 
 ## Change Log
+
+### 2.0.4 - 2024-07-18
+
+#### Changed
+
+- Create README.md file
 
 ### 2.0.3 - 2024-07-18
 
