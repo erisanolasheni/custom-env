@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "*",
-    "dotenv-expand": "^5.0.0"
+    "dotenv-expand": "^11.0.6"
   }
 }
+
