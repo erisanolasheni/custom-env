@@ -1,6 +1,6 @@
 {
   "name": "custom-env",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Custom env is a library built to make development more feasible by allowing multiple .env configurations for different environments.",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "*",
-    "dotenv-expand": "^11.0.6"
+    "dotenv-expand": "^5.0.0"
   }
 }
 

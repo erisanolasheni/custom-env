@@ -186,6 +186,12 @@ Sponsoring and Supporting `custom-env` keeps the work going and improvements ste
 
 ## Change Log
 
+### 2.0.5 - 2024-07-18
+
+#### Changed
+
+- Reverts dotenv-expand version
+
 ### 2.0.4 - 2024-07-18
 
 #### Changed
