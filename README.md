@@ -186,6 +186,12 @@ Sponsoring and Supporting `custom-env` keeps the work going and improvements ste
 
 ## Change Log
 
+### 2.0.3 - 2024-07-18
+
+#### Changed
+
+- Create FUNDING.yml file
+
 ### 2.0.2 - 2023-04-24
 
 #### Changed
